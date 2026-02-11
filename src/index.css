@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+
+    .font-great-vibes {
+        font-family: 'Great Vibes', cursive;
+    }
+
+    .font-geist {
+        font-family: 'Geist', sans-serif;
+    }
+
+    .font-cinzel {
+        font-family: 'Cinzel', serif;
+    }
+
+    .text-rose-gold {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to right, #F4C4F3, #FC6767, #F4C4F3);
+    }
+
+    .bg-glass-luxury {
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    @keyframes spotlight-move {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-spotlight {
+        background-size: 200% auto;
+        animation: spotlight-move 4s linear infinite;
+    }
+
+    @keyframes ambient-pulse {
+
+        0%,
+        100% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    }
+
+    .animate-ambient-pulse {
+        animation: ambient-pulse 3s ease-in-out infinite;
+    }
+
+    /* CHAMPAGNE GOLD LUXURY */
+    .text-gold-leaf {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to bottom, #cfc09f 0%, #ffecb3 40%, #c4a768 100%);
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-gold-shine {
+        background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+        background-size: 200% auto;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: shine 4s linear infinite;
+    }
+
+    @keyframes shine {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* REALISTIC 3D MOONLIGHT GOLD */
+    .text-3d-gold {
+        /* Pale Champagne / Platinum Gold Gradient */
+        background: linear-gradient(to bottom, #ffffff 0%, #fff5e6 20%, #d4af37 50%, #896a1a 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        /* Deep Atmospheric Shadows (Gold mixed with Night Sky Purple/Blue) */
+        text-shadow:
+            0 1px 0 #b38728,
+            0 2px 0 #aa771c,
+            0 3px 0 #8a6020,
+            0 4px 0 #6a4a15,
+            0 5px 0 #4a3020,
+            /* Transition to dark */
+            0 6px 0 #3a2030,
+            /* Deep Purple tint */
+            0 7px 0 #2a1040,
+            /* Night Sky Blue tint */
+            0 8px 20px rgba(0, 0, 0, 0.6),
+            0 20px 40px rgba(0, 0, 0, 0.5);
+
+        transform: perspective(500px) rotateX(5deg);
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    /* STUNNING SPOTLIGHT OVERLAY */
+    .text-3d-gold::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+        background-size: 200% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: stunning-shine 3s ease-in-out infinite;
+        pointer-events: none;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    }
+
+    /* EPIC CINEMATIC CHROME (MOVIE POSTER STYLE) */
+    .text-chrome-epic {
+        background: linear-gradient(to bottom,
+                #e6e6e6 0%,
+                #ffffff 45%,
+                #8a8a8a 50%,
+                #a8a8a8 60%,
+                #ffffff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        /* Metallic Hard Edge */
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+    }
+
+    /* TIMELESS WHITE LUXURY (VOGUE/OLD MONEY) */
+    .text-luxury-white {
+        color: #ffffff;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        /* Soft, deep shadow */
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.3));
+        /* Crisp edges */
+    }
+
+    .badge-luxury {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.25em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* MODERN MINIMALIST DYNAMIC SPOTLIGHT */
+    .text-spotlight-dynamic {
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.8) 20%,
+                #ffffff 50%,
+                rgba(255, 255, 255, 0.8) 80%,
+                rgba(255, 255, 255, 0.6) 100%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: spotlight-sweep 5s linear infinite;
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+    }
+
+    /* ETHEREAL GLASS & INNER LIGHT (MAGICAL & DREAMY) */
+    .text-ethereal-glass {
+        color: rgba(255, 255, 255, 0.2);
+        /* Semi-transparent base */
+        -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
+        /* Frosted Outline */
+        text-shadow:
+            0 0 20px rgba(255, 255, 255, 0.6),
+            /* Inner Glow */
+            0 0 40px rgba(135, 206, 235, 0.3),
+            /* Soft Blue Halo */
+            0 0 80px rgba(200, 100, 255, 0.2);
+        /* Deep Magic Aura */
+        filter: drop_shadow(0 0 5px rgba(255, 255, 255, 0.5));
+        animation: inner-pulse 4s ease-in-out infinite;
+    }
+
+    .animate-gentle-float {
+        animation: gentle-float 6s ease-in-out infinite;
+    }
+
+    @keyframes inner-pulse {
+
+        0%,
+        100% {
+            text-shadow:
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 40px rgba(135, 206, 235, 0.3),
+                0 0 80px rgba(200, 100, 255, 0.2);
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        50% {
+            text-shadow:
+                0 0 30px rgba(255, 255, 255, 0.9),
+                /* Brighter Glow */
+                0 0 60px rgba(135, 206, 235, 0.5),
+                0 0 100px rgba(200, 100, 255, 0.3);
+            color: rgba(255, 255, 255, 0.4);
+            /* More Opaque */
+        }
+    }
+
+    @keyframes gentle-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes spotlight-sweep {
+        0% {
+            background-position: -200% center;
+        }
+
+        100% {
+            background-position: 200% center;
+        }
+    }
+
+    @keyframes stunning-shine {
+        0% {
+            background-position: -200% center;
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            background-position: 200% center;
+            opacity: 0;
+        }
+    }
+
+    .text-3d-gold:hover {
+        transform: perspective(500px) rotateX(0deg) scale(1.02);
+    }
+
+    /* CINEMATIC DIAMOND GLASS (PURE ELEGANCE) */
+    .text-diamond-glass {
+        /* Silver / Platinum Base */
+        background: linear-gradient(to bottom, #ffffff 20%, #e0e0e0 45%, #ffffff 55%, #b0b0b0 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        /* Clean Diamond Glow (White & Ice Blue) */
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(200, 225, 255, 0.3));
+
+        position: relative;
+    }
+
+    /* Prism/Rainbow Sheen Overlay */
+    .text-diamond-glass::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        /* Holographic Sheen */
+        background: linear-gradient(110deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.9) 45%,
+                rgba(200, 240, 255, 0.8) 50%,
+                rgba(255, 200, 250, 0.8) 55%,
+                transparent 70%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shine-prism 6s linear infinite;
+    }
+
+    @keyframes shine-prism {
+        0% {
+            background-position: -100% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+}
